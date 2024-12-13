@@ -1,28 +1,31 @@
-import { Pie } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-  Filler,
-  ArcElement,
-} from 'chart.js';
+// import { Chart } from 'react-chartjs-2';
+// import {
+//   Chart as ChartJS,
+//   CategoryScale,
+//   LinearScale,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend,
+//   Filler,
+//   ArcElement,
+// } from 'chart.js';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-  Filler,
-  ArcElement
-);
+// ChartJS.register(
+//   CategoryScale,
+//   LinearScale,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend,
+//   Filler,
+//   ArcElement
+// );
+
+import 'chart.js/auto';
+import { Chart } from 'react-chartjs-2';
 
 export default function PieChart() {
   const options = {
@@ -48,7 +51,7 @@ export default function PieChart() {
 
   return (
     <div className="h-[400px] flex items-center justify-center">
-      <Pie data={data} options={options} />
+      <Chart type="pie" data={data} options={options} />
     </div>
   );
 }
